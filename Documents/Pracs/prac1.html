@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 80%;
+          margin-left: 10%;
+          margin-right: 10%;
+      }
+
+      p,h1, h3 {
+        text-align: center;
+      }
+
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
+
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+            }
+
+      li {
+          float: left;
+      }
+
+      li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+
+      li a:hover {
+          background-color: #111;
+      }
+
+      body{
+        background-image: url(image8.png.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .footer{
+        bottom: 0;
+        background-color: #333;
+        color: white;
+
+      }
+
+      </style>
+    </head>
+
+    <body>
+
+      <div class="header">
+        <h1>CHEET SHEET</h1>
+      </div>
+
+        <ul>
+          <li><a href="#CONFIGURING TOOL">Configuring </a></li>
+          <li><a href="#CREATE REPOSITORIES">Repositories</a></li>
+          <li><a href="#MAKE CHANGES">Changes</a></li>
+          <li><a href="#REFACTOR FILENAMES">Filenames</a></li>
+          <li><a href="#SUPPRESS TRACKING">Tracking</a></li>
+          <li><a href="#SAVE FRAGMENTS">Save</a></li>
+          <li><a href="#REVIEW HISTORY">Review</a></li>
+          <li><a href="#REDO COMMITS">Redo</a></li>
+          <li><a href="#SYNCHRONIZE CHANGES">Synchronize</a></li>
+        </ul>
+
+      <h1 id="INSTALL GIT">INSTALL GIT </h1>
+        <p>GitHub provides desktop clients that includ a graphial user interface for
+        the most common repository actions and an automatically updating command line
+        edition of Git for advanced scenarios</p>
+
+      <h3>GitHub for Windows</h3>
+        <p><a href="https://windows.github.com"> https://windows.github.com</a></p>
+
+      <h3>GitHub for Mac</h3>
+        <p><a href="https://mac.github.com"> https://mac.github.com</a></p>
+        <p>Git distributions for Linux and POSIX systems are available on the official Git
+          SCM web site.</p>
+
+      <h3 > Git for all platforms</h3>
+      <p><a href ="http://git-scm.com">http://git-scm.com</a></p>
+
+      <h1 id="CONFIGURING TOOL">CONFIGURING TOOL</h1>
+        <p> Configure user information for all repositories</p>
+        <table><tr><td>$ git config --global user.name "[name]"</td></tr>
+          <tr><td>Sets the name you want attached to your commit transactions</td></tr>
+          <tr><td>$ git config --global user.email "[email address]"</td></tr>
+          <tr><td>Sets the email you want attached to your commit transactions</td></tr>
+          <tr><td> git config --global color.ui auto</td></tr>
+          <tr><td>Enables helpful colorization of command line output</td></tr>
+        </table>
+
+      <h1 id="CREATE REPOSITORIES">CREATE REPOSITORIES</h1>
+        <p> Start a new repository or obtain one from an existing URL</p>
+        <table><tr><td>$ git init [project-name]</td></tr>
+          <tr><td>Creates a new local repository with the specified name</td></tr>
+          <tr><td>$ git clone [url]</td></tr>
+          <tr><td>Downloads a project and its entire version history</td></tr>
+        </table>
+
+      <h1 id="MAKE CHANGES">MAKE CHANGES</h1>
+        <p> Review edits and craft a commit transaction</p>
+        <table><tr><td>$ git status</td></tr>
+          <tr><td>Lists all new or modified files to be committed</td></tr>
+          <tr><td>$ git diff</td></tr>
+          <tr><td>Shows file differences not yet staged</td></tr>
+          <tr><td>$ git add [file]</td></tr>
+          <tr><td>Snapshots the file in preparation for versioning</td></tr>
+          <tr><td>$ git diff --staged</td></tr>
+          <tr><td>Shows file differences between staging and the last file version</td></tr>
+           <tr><td>$ git reset [file]</td></tr>
+          <tr><td>Unstages the file, but preserve its contents</td></tr>
+          <tr><td>$ git commit -m "[descriptive message]"</td></tr>
+          <tr><td>Records file snapshots permanently in version history</td></tr>
+        </table>
+
+      <h1 id="GROUP CHANGES">GROUP CHANGES</h1>
+        <p> Name a series of commits and combine completed efforts</td></tr>
+        <table><tr><td>$ git branch</td></tr>
+          <tr><td>Lists all local branches in the current repository</td></tr>
+          <tr><td>$ git branch [branch-name]</td></tr>
+          <tr><td>Creates a new branch</td></tr>
+          <tr><td>$ git checkout [branch-name]</td></tr>
+          <tr><td>Switches to the specified branch and updates the working directory</td></tr>
+          <tr><td>$ git merge [branch]</td></tr>
+          <tr><td>Combines the specified branch’s history into the current branch</td></tr>
+          <tr><td>$ git branch -d [branch-name]</td></tr>
+          <tr><td>Deletes the specified branch</td></tr>
+        </table>
+
+      <h1 id="REFACTOR FILENAMES">REFACTOR FILENAMES</h1>
+        <p> Relocate and remove versioned files</p>
+        <table><tr><td>$ git rm [file]</td></tr>
+          <tr><td>Deletes the file from the working directory and stages the deletion
+           $ git rm --cached [file]</td></tr>
+          <tr><td>Removes the file from version control but preserves the file locally</td></tr>
+          <tr><td>$ git mv [file-original] [file-renamed]</td></tr>
+          <tr><td>Changes the file name and prepares it for commit</td></tr>
+        </table>
+
+      <h1 id="SUPPRESS TRACKING">SUPPRESS TRACKING</h1>
+        <p> Exclude temporary files and paths</p>
+        <table><tr><td> *.log</td></tr>
+         <tr><td>build/</td></tr>
+         <tr><td>temp-*</td></tr>
+         <tr><td>A text file named .gitignore suppresses accidental versioning of files and paths matching the specified patterns</td></tr>
+         <tr><td>$ git ls-files --other --ignored --exclude-standard</td></tr>
+         <tr><td>Lists all ignored files in this project</td></tr>
+        </table>
+
+      <h1 id="SAVE FRAGMENTS">SAVE FRAGMENTS</h1>
+        <p> Shelve and restore incomplete changes</p>
+        <table><tr><td>$ git stash</td></tr>
+          <tr><td>Temporarily stores all modified tracked files</td></tr>
+          <tr><td>$ git stash pop</td></tr>
+          <tr><td>Restores the most recently stashed files</td></tr>
+          <tr><td>$ git stash list</td></tr>
+          <tr><td>Lists all stashed changesets</td></tr>
+          <tr><td>$ git stash drop</td></tr>
+          <tr><td>Discards the most recently stashed changeset</td></tr>
+        </table>
+
+      <h1 id="REVIEW HISTORY">REVIEW HISTORY</h1>
+        <p> Browse and inspect the evolution of project files</p>
+        <table><tr><td>$ git log</td></tr>
+          <tr><td>Lists version history for the current branch</td></tr>
+          <tr><td>$ git log --follow [file]</td></tr>
+          <tr><td>Lists version history for a file, including renames</td></tr>
+          <tr><td>$ git diff [first-branch]...[second-branch]</td></tr>
+          <tr><td>Shows content differences between two branches</td></tr>
+          <tr><td>$ git show [commit]</td></tr>
+          <tr><td>Outputs metadata and content changes of the specified commit</td></tr>
+        </table>
+
+      <h1 id="REDO COMMITS">REDO COMMITS</h1>
+        <p> Erase mistakes and craft replacement history</p>
+        <table><tr><td> $ git reset [commit]</td></tr>
+          <tr><td>Undoes all commits after [commit], preserving changes locally </td></tr>
+          <tr><td>$ git reset --hard [commit]</td></tr>
+          <tr><td>Discards all history and changes back to the specified commit</td></tr>
+        </table>
+
+      <h1 id="SYNCHRONIZE CHANGES">SYNCHRONIZE CHANGES</h1>
+        <p> Register a repository bookmark and exchange version history</p>
+        <table><tr><td
+          +>$ git fetch [bookmark]</td></tr>
+          <tr><td>Downloads all history from the repository bookmark</td></tr>
+          <tr><td>$ git merge [bookmark]/[branch]</td></tr>
+          <tr><td>Combines bookmark’s branch into current local branch</td></tr>
+          <tr><td>$ git push [alias] [branch]</td></tr>
+          <tr><td>Uploads all local branch commits to GitHub</td></tr>
+          <tr><td>$ git pull</td></tr>
+          <tr><td>Downloads bookmark history and incorporates changes</td></tr>
+        </table>
+
+      <div class="footer">
+        <p>- the end -</p>
+      </div>
+
+
+  </body>
+</html>
